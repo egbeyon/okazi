@@ -1,27 +1,39 @@
 @import "../../../styles/base.scss";
 
 .main-content {
-  flex: 1 1 auto;
-  margin-left: 2rem;
-  background-color: $white;
+  min-width: 100px;
+  width: 100%;
+  object-fit: contain;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  flex: 1, 1, auto;
+  margin-left: 1rem;
+  background-color: rgb(226, 220, 220);
   margin-top: 70px;
 }
 
 .header {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: $medium;
   color: $black;
+   margin-left: 5rem;
+  margin-top: 3rem;
+  align-items: center;
 }
 
 .projects {
-  width: 97.5%;
-  height: auto;
+  width: 97.5rem;
+  height: 100rem;
+  // height: auto;
   border: 1px solid $gray;
+  margin-left: 7rem;
 }
 
 .no-projects {
   width: 100%;
-  height: 200px;
+  height: 97rem;
+  // height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,6 +44,7 @@
   height: 40px;
   color: #ffffff;
   margin-top: 0.5rem;
+  margin-left: 5rem;
   background-color: $primaryBlue;
   border-color: $primaryBlue;
   border-radius: 4px;
@@ -39,7 +52,7 @@
   font-family: $code;
   transition: all 0.25s ease 0s;
   padding: 0rem 1rem;
-  min-width: 200px;
+  width: 200px;
 
   &:hover {
     background-color: $hoverBlue;

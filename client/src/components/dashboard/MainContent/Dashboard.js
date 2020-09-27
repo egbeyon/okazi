@@ -34,8 +34,7 @@ class Dashboard extends Component {
   };
 
   render() {
-    const { projects } = this.props.projects;
-
+    const { projects } = this.props.projects
     let content;
 
     let projectData = projects.sort().map(project => (
@@ -45,24 +44,13 @@ class Dashboard extends Component {
         onClick={() => this.props.history.push(`/projects/${project._id}`)}
       >
         <div className="project-name">{project.name}</div>
-        <div
-          className="project-info-button"
-          onClick={this.toggleEditModal.bind(
-            this,
-            project.name,
-            project.teamMembers,
-            project._id,
-            project.owner
-          )}
-        >
-          Edit project
-        </div>
+       
         <div className="project-info-button">Go to project</div>
       </div>
     ));
 
     if (projects.length > 0) {
-      // At least one project
+      
       content = (
         <>
           <button className="main-btn" onClick={this.toggleModal}>
@@ -82,13 +70,15 @@ class Dashboard extends Component {
           <div className="projects-wrapper">{projectData}</div>
         </>
       );
-    } else {
+    } 
+    else {
       // No projects
       content = (
         <>
           <div className="projects">
             <div className="no-projects">
-              <h1 className="header">You have no projects</h1>
+              <h1 className="header">You have not created any project</h1>
+              <p className="header">You have not been assigned to any project</p>
               <button className="main-btn" onClick={this.toggleModal}>
                 Create your first project
               </button>
@@ -111,7 +101,8 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => ({
-  projects: state.projects
+  projects: state.projects,
+  auth: state.auth
 });
 
 export default connect(

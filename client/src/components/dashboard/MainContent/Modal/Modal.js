@@ -12,7 +12,7 @@ import {
   updateTask
 } from "../../../../actions/taskActions";
 
-import moment from "moment";
+//import moment from "moment";
 
 import "./Modal.scss";
 
@@ -21,9 +21,9 @@ class Modal extends Component {
     projectName: "",
     members: [{ name: "", email: "" }],
     taskName: "",
-    assignee: "",
-    monthDue: "",
-    dayDue: "",
+    // assignee: "",
+    // monthDue: "",
+    // dayDue: "",
     taskId: ""
   };
 
@@ -114,108 +114,108 @@ class Modal extends Component {
   createTask = e => {
     e.preventDefault();
 
-    let fullDate =
-      this.state.monthDue +
-      "-" +
-      this.state.dayDue +
-      "-" +
-      Date().split(" ")[3];
+    // let fullDate =
+    //   this.state.monthDue +
+    //   "-" +
+    //   this.state.dayDue +
+    //   "-" +
+    //   Date().split(" ")[3];
 
-    let momentDate = moment(fullDate, "MM-DD-YYYY")
-      ._d.toString()
-      .split(" ");
+    // let momentDate = moment(fullDate, "MM-DD-YYYY")
+    //   ._d.toString()
+    //   .split(" ");
 
-    let finalDate = momentDate[1] + " " + momentDate[2];
+    // let finalDate = momentDate[1] + " " + momentDate[2];
 
     const data = {
       project: this.props.projects.project._id,
       taskName: this.state.taskName,
-      assignee: this.state.assignee,
-      dateDue: finalDate
+      // assignee: this.state.assignee,
+      // dateDue: finalDate
     };
-
+      console.log(data)
     this.props.createTask(data);
 
     this.onClose();
   };
 
   updateTask = id => {
-    let finalDate;
+    // let finalDate;
 
-    let dates = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec"
-    ];
+    // let dates = [
+    //   "Jan",
+    //   "Feb",
+    //   "Mar",
+    //   "Apr",
+    //   "May",
+    //   "Jun",
+    //   "Jul",
+    //   "Aug",
+    //   "Sep",
+    //   "Oct",
+    //   "Nov",
+    //   "Dec"
+    // ];
 
-    if (!this.state.monthDue && !this.state.dayDue) {
-      finalDate = this.props.dateDue;
-    } else if (
-      this.props.dateDue &&
-      this.props.dateDue !== "Date undefined" &&
-      !this.state.monthDue &&
-      this.state.dayDue
-    ) {
-      let fullDate =
-        dates.indexOf(this.props.dateDue.split(" ")[0]) +
-        1 +
-        "-" +
-        this.state.dayDue +
-        "-" +
-        Date().split(" ")[3];
+    // if (!this.state.monthDue && !this.state.dayDue) {
+    //   finalDate = this.props.dateDue;
+    // } else if (
+    //   this.props.dateDue &&
+    //   this.props.dateDue !== "Date undefined" &&
+    //   !this.state.monthDue &&
+    //   this.state.dayDue
+    // ) {
+    //   let fullDate =
+    //     dates.indexOf(this.props.dateDue.split(" ")[0]) +
+    //     1 +
+    //     "-" +
+    //     this.state.dayDue +
+    //     "-" +
+    //     Date().split(" ")[3];
 
-      let momentDate = moment(fullDate, "MM-DD-YYYY")
-        ._d.toString()
-        .split(" ");
+    //   let momentDate = moment(fullDate, "MM-DD-YYYY")
+    //     ._d.toString()
+    //     .split(" ");
 
-      finalDate = momentDate[1] + " " + momentDate[2];
-    } else if (
-      this.props.dateDue &&
-      this.props.dateDue !== "Date undefined" &&
-      !this.state.dayDue &&
-      this.state.monthDue
-    ) {
-      let fullDate =
-        this.state.monthDue +
-        "-" +
-        this.props.dateDue.split(" ")[1] +
-        "-" +
-        Date().split(" ")[3];
+    //   finalDate = momentDate[1] + " " + momentDate[2];
+    // } else if (
+    //   this.props.dateDue &&
+    //   this.props.dateDue !== "Date undefined" &&
+    //   !this.state.dayDue &&
+    //   this.state.monthDue
+    // ) {
+    //   let fullDate =
+    //     this.state.monthDue +
+    //     "-" +
+    //     this.props.dateDue.split(" ")[1] +
+    //     "-" +
+    //     Date().split(" ")[3];
 
-      let momentDate = moment(fullDate, "MM-DD-YYYY")
-        ._d.toString()
-        .split(" ");
+    //   let momentDate = moment(fullDate, "MM-DD-YYYY")
+    //     ._d.toString()
+    //     .split(" ");
 
-      finalDate = momentDate[1] + " " + momentDate[2];
-    } else {
-      let fullDate =
-        this.state.monthDue +
-        "-" +
-        this.state.dayDue +
-        "-" +
-        Date().split(" ")[3];
+    //   finalDate = momentDate[1] + " " + momentDate[2];
+    // } else {
+    //   let fullDate =
+    //     this.state.monthDue +
+    //     "-" +
+    //     this.state.dayDue +
+    //     "-" +
+    //     Date().split(" ")[3];
 
-      let momentDate = moment(fullDate, "MM-DD-YYYY")
-        ._d.toString()
-        .split(" ");
+    //   let momentDate = moment(fullDate, "MM-DD-YYYY")
+    //     ._d.toString()
+    //     .split(" ");
 
-      finalDate = momentDate[1] + " " + momentDate[2];
-    }
+    //   finalDate = momentDate[1] + " " + momentDate[2];
+    // }
 
     let task = {
       id: id,
       taskName: this.state.taskName,
-      dateDue: finalDate,
-      assignee: this.state.assignee || this.props.assignee
+      // dateDue: finalDate,
+      // assignee: this.state.assignee || this.props.assignee
     };
 
     this.props.updateTask(task);
@@ -238,33 +238,33 @@ class Modal extends Component {
 
     // Create task modal
     if (this.props.task) {
-      const { teamMembers } = this.props.projects.project;
-      const { name, email } = this.props.auth.user;
+     // const { teamMembers } = this.props.projects.project;
+      //const { name, email } = this.props.auth.user;
 
       // Assignee dropdown in Modal
-      let membersOptions = teamMembers.map((member, index) => (
-        <option key={index} value={member.email}>
-          {member.name}
-        </option>
-      ));
+    //  let membersOptions = teamMembers.map((member, index) => (
+      //   <option key={index} value={member.email}>
+      //     {member.name}
+      //   </option>
+      // ));
 
       // Due date dropdown in Modal
-      const MONTHS = new Array(12).fill(1);
-      const DAYS = new Array(31).fill(1);
+      // const MONTHS = new Array(12).fill(1);
+      // const DAYS = new Array(31).fill(1);
 
-      let monthsOptions = MONTHS.map((month, i) => (
-        <option key={i} value={i + 1}>
-          {i < 9 && "0"}
-          {i + 1}
-        </option>
-      ));
+      // let monthsOptions = MONTHS.map((month, i) => (
+      //   <option key={i} value={i + 1}>
+      //     {i < 9 && "0"}
+      //     {i + 1}
+      //   </option>
+      // ));
 
-      let daysOptions = DAYS.map((day, i) => (
-        <option key={i} value={i + 1}>
-          {i < 9 && "0"}
-          {i + 1}
-        </option>
-      ));
+      // let daysOptions = DAYS.map((day, i) => (
+      //   <option key={i} value={i + 1}>
+      //     {i < 9 && "0"}
+      //     {i + 1}
+      //   </option>
+      // ));
 
       return (
         <form onSubmit={this.createTask} className="modal">
@@ -286,7 +286,7 @@ class Modal extends Component {
               />
             </label>
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <div className="split">
               <label>
                 <div className="form-label">Assignee</div>
@@ -336,7 +336,7 @@ class Modal extends Component {
                 </div>
               </label>
             </div>
-          </div>
+          </div> */}
           <div>
             <button className="main-btn update-project" type="submit">
               Create Task
@@ -348,55 +348,56 @@ class Modal extends Component {
 
     // Edit Task Modal
     else if (this.props.editTask) {
-      const { teamMembers } = this.props.projects.project;
-      const { name, email } = this.props.auth.user;
+      // const { teamMembers } = this.props.projects.project;
+      // const { name, email } = this.props.auth.user;
 
-      const { assignee, dateDue, taskId } = this.props;
-      let assigneeName;
+      // const { assignee, dateDue, taskId } = this.props;
+      const { taskId } = this.props;
+      // let assigneeName;
 
-      let assignedMonth = moment(dateDue).month() + 1;
-      let assignedDay = dateDue.split(" ")[1];
+      // let assignedMonth = moment(dateDue).month() + 1;
+      // let assignedDay = dateDue.split(" ")[1];
 
-      // Find name from email
-      teamMembers.forEach(member => {
-        if (member.email === assignee) {
-          assigneeName = member.name;
-        } else if (assignee) {
-          assigneeName = name + " (You)";
-        }
-      });
+      // // Find name from email
+      // teamMembers.forEach(member => {
+      //   if (member.email === assignee) {
+      //     assigneeName = member.name;
+      //   } else if (assignee) {
+      //     assigneeName = name + " (You)";
+      //   }
+      // });
 
-      // Assignee dropdown in Modal
-      let membersOptions = teamMembers.map((member, index) => {
-        if (member.name !== assigneeName) {
-          return (
-            <option key={member._id} value={member.email}>
-              {member.name}
-            </option>
-          );
-        }
-        return null;
-      });
+      // // Assignee dropdown in Modal
+      // let membersOptions = teamMembers.map((member, index) => {
+      //   if (member.name !== assigneeName) {
+      //     return (
+      //       <option key={member._id} value={member.email}>
+      //         {member.name}
+      //       </option>
+      //     );
+      //   }
+      //   return null;
+      // });
 
       // Due date dropdown in Modal
-      const MONTHS = new Array(12).fill(1);
-      const DAYS = new Array(31).fill(1);
+      // const MONTHS = new Array(12).fill(1);
+      // const DAYS = new Array(31).fill(1);
 
-      let monthsOptions = MONTHS.map((month, i) => {
-        return (
-          <option key={i} value={i + 1}>
-            {i < 9 && "0"}
-            {i + 1}
-          </option>
-        );
-      });
+      // let monthsOptions = MONTHS.map((month, i) => {
+      //   return (
+      //     <option key={i} value={i + 1}>
+      //       {i < 9 && "0"}
+      //       {i + 1}
+      //     </option>
+      //   );
+      // });
 
-      let daysOptions = DAYS.map((day, i) => (
-        <option key={i} value={i + 1}>
-          {i < 9 && "0"}
-          {i + 1}
-        </option>
-      ));
+      // let daysOptions = DAYS.map((day, i) => (
+      //   <option key={i} value={i + 1}>
+      //     {i < 9 && "0"}
+      //     {i + 1}
+      //   </option>
+      // ));
 
       return (
         <form className="modal">
@@ -418,7 +419,7 @@ class Modal extends Component {
               />
             </label>
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <div className="split">
               <label>
                 <div className="form-label">Assignee</div>
@@ -481,7 +482,7 @@ class Modal extends Component {
                 </div>
               </label>
             </div>
-          </div>
+          </div> */}
           <div>
             <button
               className="main-btn update-project"

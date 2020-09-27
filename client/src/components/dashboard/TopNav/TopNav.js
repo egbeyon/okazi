@@ -18,7 +18,6 @@ class TopNav extends Component {
     document.removeEventListener("mousedown", this.handleClick, false);
   }
 
-  // Close dropdown when click outside
   handleClick = e => {
     if (this.state.dropdown && !this.node.contains(e.target)) {
       this.setState({ dropdown: !this.state.dropdown });
@@ -46,15 +45,14 @@ class TopNav extends Component {
     let rightSide = document.querySelector(".right");
     rightSide.classList.remove("no-side");
 
-    let rightSideRight = document.querySelector(".right-top");
-    rightSideRight.classList.remove("right-top-visibile");
   };
 
   render() {
-    const { name, email } = this.props.auth.user;
 
     return (
-      <nav className="top-nav" ref={node => (this.node = node)}>
+      <nav className="top-nav"
+        ref={node => (this.node = node)}
+       >
         <div className="left-top">
           <i
             onClick={this.toggleMenu}
@@ -64,36 +62,11 @@ class TopNav extends Component {
           </i>
           <Link to="/dashboard">
             <h1 className="brand-header">
-              Team<span className="brand-header-sub">s</span>
+              OKAZI Soup
             </h1>
           </Link>
         </div>
-        <ul className="right-top">
-          <li>
-            <div className="email">
-              <p>Signed in as {email}</p>
-            </div>
-          </li>
-          <li>
-            <div className="profile" onClick={this.handleProfileClick}>
-              <span>{name !== undefined && name.split("")[0]}</span>
-            </div>
-            {this.state.dropdown ? (
-              <ul className="dropdown">
-                <p>Hello, {name !== undefined && name.split(" ")[0]}</p>
-                <Link to="/dashboard">
-                  <li>Home</li>
-                </Link>
-                {/*
-                <Link to="/tasks">
-                  <li>My Tasks</li>
-                </Link>
-                */}
-                <li onClick={this.onLogoutClick}>Sign Out</li>
-              </ul>
-            ) : null}
-          </li>
-        </ul>
+        
       </nav>
     );
   }

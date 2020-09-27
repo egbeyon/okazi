@@ -18,6 +18,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Layout from "./components/dashboard/Layout";
 import NotFound from "./components/404/404";
 
+
 // Style
 import "./App.scss";
 
@@ -64,4 +65,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;

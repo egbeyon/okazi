@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
+import TopNav from '../dashboard/TopNav/TopNav'
 
 import "./Auth.scss";
 
@@ -62,7 +63,15 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
+      <div>
+           <TopNav />
+           <div className="tedtalk">
+             <h2 className="firsttalk">Welcome to OKAZI SOUP </h2> 
+             <h5 className="proj">Project Management Software for Geoscience teams
+              </h5> 
+           </div>
       <div className="base-wrapper">
+       
         <div className="auth-header">Sign In</div>
         <form className="auth-form" noValidate onSubmit={this.onSubmit}>
           <div className="auth-group">
@@ -112,6 +121,7 @@ class Login extends Component {
             </Link>
           </div>
         </form>
+      </div>
       </div>
     );
   }

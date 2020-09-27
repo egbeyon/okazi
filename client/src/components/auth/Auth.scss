@@ -1,26 +1,59 @@
 @import "../../styles/base.scss";
 
+.firsttalk {
+  color: rgb(93, 182, 93);
+  margin-bottom: 1px;
+  margin-top: 70px;
+  margin-left: 10px;
+}
+
+.tedtalk {
+  background-color: rgba(247, 243, 243, 0.959);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1px;
+  font-size: 42px;
+}
+
+.proj {
+  color: #2b2b2b;
+  margin-left: 20px;
+}
+
 .base-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  //height: 80vh;
   width: 100%;
-  background: $white;
-  background-image: url(https://images.unsplash.com/photo-1438804507856-d05d2d17e5b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-color: rgba(216, 209, 209, 0.959);
+  //background-image: url(http://www.thepretendchef.com/okazi-soup/);
+  // background-repeat: no-repeat;
+  // background-size: contain;
 }
 
 .auth-header {
   color: $black;
-  background-color: $white;
+  background-color: white;
   padding: 1rem;
   font-size: 20px;
   text-align: center;
   margin-bottom: 1rem;
   font-weight: $medium;
+}
+
+.reg-header {
+  color: $black;
+  background-color: white;
+  padding: 1rem;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 1rem;
+  font-weight: $medium;
+  justify-content: center;
 }
 
 .demo {
@@ -36,13 +69,13 @@
 
   &:hover {
     cursor: pointer;
-    color: $primaryBlue;
+    color: lightgreen;
   }
 }
 
 .auth-form {
   width: 480px;
-  background-color: $white;
+  background-color: rgb(181, 238, 181);
   border: 1px solid $gray;
   padding: 2rem;
 }
@@ -61,7 +94,11 @@
 }
 
 .auth-input {
-  background-color: $lighterGray;
+  background-color: white;
+}
+
+.auth-input {
+  background-color: white;
   border: 1px solid $lighterGray;
   border-radius: 4px;
   height: 40px;
@@ -78,7 +115,7 @@
   }
 
   &:focus {
-    border-color: $primaryBlue;
+    border-color: white;
     transition: all 0.25s ease 0s;
   }
 }
@@ -94,7 +131,7 @@
   height: 40px;
   margin-top: 1rem;
   color: #ffffff;
-  background-color: $primaryBlue;
+  background-color: #9c9b9b;
   border-color: $primaryBlue;
   border-radius: 4px;
   width: 100%;
@@ -103,7 +140,7 @@
   transition: all 0.25s ease 0s;
 
   &:hover {
-    background-color: $hoverBlue;
+    background-color: rgb(93, 182, 93);
     border-color: $hoverBlue;
     transform: translateY(-2.5px);
     cursor: pointer;

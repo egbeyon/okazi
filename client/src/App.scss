@@ -9,3 +9,14 @@ ul * {
 a {
   text-decoration: none;
 }
+
+@media only screen and (max-device-width: 480px),
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (-webkit-device-pixel-ratio: 1.5) {
+    .App {
+      width: 90%;
+      min-width: 200px;
+      margin: auto;
+    }
+  }
+

@@ -22,8 +22,8 @@ class SideNav extends Component {
     let rightSide = document.querySelector(".right");
     rightSide.classList.add("no-side");
 
-    let rightSideRight = document.querySelector(".right-top");
-    rightSideRight.classList.add("right-top-visibile");
+    // let rightSideRight = document.querySelector(".right-top");
+    // rightSideRight.classList.add("right-top-visibile");
   };
 
   render() {

@@ -9,8 +9,8 @@
   background-color: $white;
   position: fixed;
   width: 100%;
-  min-width: 1100px;
-  z-index: 1000;
+  //min-width: 1100px;
+  //z-index: 1000;
 }
 
 /* Left side of nav */
@@ -47,10 +47,10 @@
 
 /* Right side of nav */
 .right-top {
-  display: flex;
-  align-items: center;
-  margin-right: 225px;
-  transition: all 0.25s ease 0s;
+  // display: flex;
+  // align-items: center;
+  // margin-right: 225px;
+  // transition: all 0.25s ease 0s;
 
   .email {
     font-size: 10px;
@@ -78,22 +78,22 @@
   }
 
   .profile {
-    height: 15px;
-    width: 15px;
-    padding: 1.25rem;
-    font-size: 12px;
-    background-color: $red;
-    color: $white;
-    margin-right: 2rem;
-    display: inline-block;
-    user-select: none;
-    transition: all 0.25s ease 0s;
+    // height: 15px;
+    // width: 15px;
+    // padding: 1.25rem;
+    // font-size: 12px;
+    // background-color: $red;
+    // color: $white;
+    // margin-right: 2rem;
+    // display: inline-block;
+    // user-select: none;
+    // transition: all 0.25s ease 0s;
 
-    &:hover {
-      opacity: 0.9;
-      cursor: pointer;
-      transition: all 0.25s ease 0s;
-    }
+    // &:hover {
+    //   opacity: 0.9;
+    //   cursor: pointer;
+    //   transition: all 0.25s ease 0s;
+    // }
   }
 
   .dropdown {

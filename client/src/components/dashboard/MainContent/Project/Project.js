@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { getProject } from "../../../../actions/projectsActions";
 import { getTasks, deleteTask } from "../../../../actions/taskActions";
 
+
 import Spinner from "../../../common/Spinner";
 import Modal from "../Modal/Modal";
 
@@ -21,10 +22,10 @@ class Project extends Component {
     owner: {},
     tasks: [],
     date: "",
-    taskName: "",
-    assignee: "",
+     taskName: "",
+    // assignee: "",
     taskId: "",
-    dateDue: ""
+    // dateDue: ""
   };
 
   toggleModal = e => {
@@ -59,9 +60,9 @@ class Project extends Component {
       modal: !this.state.modal,
       editTask: !this.state.editTask,
       taskName: taskName,
-      assignee: assignee,
+      // assignee: assignee,
       taskId: id,
-      dateDue: dateDue
+      // dateDue: dateDue
     });
   };
 
@@ -93,6 +94,7 @@ class Project extends Component {
 
   render() {
     const { tasks } = this.props.tasks;
+    //const tasks = task
 
     let tasksList = tasks.map((task, index) => (
       <div className="task-input" key={task._id}>
@@ -100,9 +102,10 @@ class Project extends Component {
           className="material-icons check-task"
           onClick={this.deleteTask.bind(this, task._id)}
         >
-          check_circle
+          delete
         </i>
         <span
+          // onClick={() => this.props.history.push(`/tasks/${task._id}`)}
           onClick={this.toggleEditTaskModal.bind(
             this,
             task.taskName,
@@ -116,7 +119,7 @@ class Project extends Component {
         >
           {task.taskName}
         </span>
-        <span
+        {/* <span
           onClick={this.toggleEditTaskModal.bind(
             this,
             task.taskName,
@@ -143,7 +146,7 @@ class Project extends Component {
           }
         >
           {task.dateDue === "Date undefined" ? "Not Set" : task.dateDue}
-        </span>
+        </span> */}
       </div>
     ));
 
@@ -183,8 +186,8 @@ class Project extends Component {
               id={this.state.id}
               owner={this.state.owner}
               taskName={this.state.taskName}
-              assignee={this.state.assignee}
-              dateDue={this.state.dateDue}
+              // assignee={this.state.assignee}
+              // dateDue={this.state.dateDue}
               taskId={this.state.taskId}
             />
           </div>
