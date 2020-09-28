@@ -66,7 +66,7 @@ class Login extends Component {
       <div>
            <TopNav />
            <div className="tedtalk">
-             <h2 className="firsttalk">Welcome to OKAZI SOUP </h2> 
+             <h2 className="firsttalk">Welcome to OKAZI </h2> 
              <h5 className="proj">Project Management Software for Geoscience teams
               </h5> 
            </div>

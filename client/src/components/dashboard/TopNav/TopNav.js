@@ -62,7 +62,7 @@ class TopNav extends Component {
           </i>
           <Link to="/dashboard">
             <h1 className="brand-header">
-              OKAZI Soup
+              OKAZI 
             </h1>
           </Link>
         </div>
