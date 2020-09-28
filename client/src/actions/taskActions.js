@@ -7,12 +7,12 @@ import {
   GET_TASKS,
   TASKS_LOADING
 } from "./types";
-import { USER_SERVER } from '../components/Config.js';
+//import { USER_SERVER } from '../components/Config.js';
 
 // Create Task
 export const createTask = taskData => dispatch => {
   axios
-    .post(`${USER_SERVER}/api/tasks/create`, taskData)
+    .post(`/api/tasks/create`, taskData)
     .then(res =>
       dispatch({
         type: CREATE_TASK,
@@ -26,7 +26,7 @@ export const createTask = taskData => dispatch => {
 export const getTasks = id => dispatch => {
   dispatch(setTasksLoading());
   axios
-    .get(`${USER_SERVER}/api/tasks/${id}`)
+    .get(`/api/tasks/${id}`)
     .then(res =>
       dispatch({
         type: GET_TASKS,
@@ -44,7 +44,7 @@ export const getTasks = id => dispatch => {
 // Delete Task
 export const deleteTask = id => dispatch => {
   axios
-    .delete(`${USER_SERVER}/api/tasks/delete/${id}`)
+    .delete(`/api/tasks/delete/${id}`)
     .then(res =>
       dispatch({
         type: DELETE_TASK,
@@ -57,7 +57,7 @@ export const deleteTask = id => dispatch => {
 // Update Task
 export const updateTask = taskData => dispatch => {
   axios
-    .patch(`${USER_SERVER}/api/tasks/update`, taskData)
+    .patch(`/api/tasks/update`, taskData)
     .then(res =>
       dispatch({
         type: UPDATE_TASK,

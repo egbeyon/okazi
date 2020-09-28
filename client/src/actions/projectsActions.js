@@ -9,12 +9,12 @@ import {
   GET_PROJECTS,
   PROJECTS_LOADING
 } from "./types";
-import { USER_SERVER } from '../components/Config.js';
+//import { USER_SERVER } from '../components/Config.js';
 
 // Create Project
 export const createProject = projectData => dispatch => {
   axios
-    .post(`${USER_SERVER}/api/projects/create`, projectData)
+    .post(`/api/projects/create`, projectData)
     .then(res =>
       dispatch({
         type: CREATE_PROJECT,
@@ -27,7 +27,7 @@ export const createProject = projectData => dispatch => {
 // Update Project
 export const updateProject = projectData => dispatch => {
   axios
-    .patch(`${USER_SERVER}/api/projects/update`, projectData)
+    .patch(`/api/projects/update`, projectData)
     .then(res =>
       dispatch({
         type: UPDATE_PROJECT,
@@ -40,7 +40,7 @@ export const updateProject = projectData => dispatch => {
 // Delete Project
 export const deleteProject = (id, history) => dispatch => {
   axios
-    .delete(`${USER_SERVER}/api/projects/delete/${id}`)
+    .delete(`/api/projects/delete/${id}`)
     .then(res =>
       dispatch({
         type: DELETE_PROJECT,
@@ -55,7 +55,7 @@ export const deleteProject = (id, history) => dispatch => {
 export const getProject = id => dispatch => {
   dispatch(setProjectLoading());
   axios
-    .get(`${USER_SERVER}/api/projects/${id}`)
+    .get(`/api/projects/${id}`)
     .then(res =>
       dispatch({
         type: GET_PROJECT,
@@ -74,7 +74,7 @@ export const getProject = id => dispatch => {
 export const getProjects = () => dispatch => {
   dispatch(setProjectsLoading());
   axios
-    .get(`${USER_SERVER}/api/projects`)
+    .get(`/api/projects`)
     .then(res =>
       dispatch({
         type: GET_PROJECTS,

@@ -7,12 +7,12 @@ import {
   // FIELD_LOADING,
   // FIELDS_LOADING
 } from "./types";
-import { USER_SERVER } from '../components/Config.js';
+///import { USER_SERVER } from '../components/Config.js';
 
 // Create Task
 export const createField = fata => dispatch => {
   axios
-    .post(`${USER_SERVER}/api/fields/create`, fata)
+    .post(`/api/fields/create`, fata)
     .then(res =>
       dispatch({
         type: CREATE_FIELD,
@@ -26,7 +26,7 @@ export const createField = fata => dispatch => {
 export const getField = id => dispatch => {
   //dispatch(setFieldLoading());
   axios
-    .get(`${USER_SERVER}/api/fields/${id}`)
+    .get(`/api/fields/${id}`)
     .then(res =>
       dispatch({
         type: GET_FIELDS,
@@ -44,7 +44,7 @@ export const getField = id => dispatch => {
 // Delete Task
 export const deleteField = id => dispatch => {
   axios
-    .delete(`${USER_SERVER}/api/fields/delete/${id}`)
+    .delete(`/api/fields/delete/${id}`)
     .then(res =>
       dispatch({
         type: DELETE_FIELD,
@@ -57,7 +57,7 @@ export const deleteField = id => dispatch => {
 // Update Task
 export const updateField = (fieldData) => dispatch => {
   axios
-    .patch(`${USER_SERVER}/api/fields/update/`, fieldData)
+    .patch(`/api/fields/update/`, fieldData)
     .then(res =>
       dispatch({
         type: UPDATE_FIELD,

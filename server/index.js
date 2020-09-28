@@ -27,11 +27,6 @@ app.use(bodyParser.json());
 
 const uri = process.env.ATLAS_URI;
 
-// Connect to MongoDB
-//mongoose.connect("mongodb://localhost:27017/rishipGeospatial")
-
-
-
 mongoose.connect(uri, 
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}
   )
@@ -57,14 +52,14 @@ app.use("/api/tasks", tasks);
 app.use("/api/fields", geofield);
 
 // Serve static assets (build folder) if in production
-if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static("client/build"));
+// if (process.env.NODE_ENV === "production") {
+//   // Set static folder
+//   app.use(express.static("client/build"));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+//   });
+// }
 
 const port = process.env.PORT || 5000;
 
